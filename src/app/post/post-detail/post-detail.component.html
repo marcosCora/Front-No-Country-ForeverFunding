@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="card mt-5 mb-5">
+        <div class="card-body">
+            <div class="row mt-2 m-2">
+                <div class="col-lg-6">
+                    <img src="{{postSeleccionado.image}}" width="100%">
+                </div>
+                <div class="col-lg-6 mt-5 mb-3">
+                    <div class="text-center">
+                        <h5> {{postSeleccionado.nombre}} </h5>
+                    </div>
+                    <div class="text-center mt-5 mb-5">
+                        {{postSeleccionado.data}}
+                    </div>
+                    <div class=" text-center mt-5">
+                        <a class="btn principal_color"> 
+                            <img src="../../../assets/resources/icon3.png" width="25px">
+                              &nbsp; Realizar Donación
+                          </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

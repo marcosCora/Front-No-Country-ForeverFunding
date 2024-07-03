@@ -1,0 +1,68 @@
+<app-navbar-user></app-navbar-user>
+
+<div class="text-center mt-5">
+  <h1> Administración de cuentas Furever Funding </h1>
+</div>
+
+<div class="container-xxl container_">
+  <mat-tab-group>
+    <mat-tab label="Donador">
+      <div class="table_">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Email</th>
+              <th scope="col"> </th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let u of usersDonors | paginate: { itemsPerPage: 5, currentPage: page }">
+            <tr>
+              <th scope="row">{{u.id}}</th>
+              <td>{{u.name}}</td>
+              <td>{{u.lastname}}</td>
+              <td>{{u.email}}</td>
+              <td><a class="pointer" matTooltip="Eliminar" (click)="delete(u.id)"><i class="fa-solid fa-trash" style="color: #ff0000;" ></i></a></td>
+            </tr>
+          </tbody>
+          <div *ngIf="usersDonors.length > 5">
+            <pagination-controls (pageChange)="page = $event" previousLabel="Anterior"
+              nextLabel="Siguiente"></pagination-controls>
+          </div>
+        </table>
+      </div>
+    </mat-tab>
+    <mat-tab label="Creador">
+      <div class="table_">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Email</th>
+              <th scope="col"> </th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let u of usersCreators | paginate: { itemsPerPage: 5, currentPage: page }">
+            <tr>
+              <th scope="row">{{u.id}}</th>
+              <td>{{u.name}}</td>
+              <td>{{u.lastname}}</td>
+              <td>{{u.email}}</td>
+              <td><a class="pointer" matTooltip="Eliminar" (click)="delete(u.id)"><i class="fa-solid fa-trash" style="color: #ff0000;" ></i></a></td>
+            </tr>
+          </tbody>
+          <div class="paginator-control" *ngIf="usersCreators.length > 5">
+            <pagination-controls (pageChange)="page = $event" previousLabel="Anterior"
+              nextLabel="Siguiente"></pagination-controls>
+          </div>
+        </table>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<app-footer></app-footer>

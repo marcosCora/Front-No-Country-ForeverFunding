@@ -1,0 +1,108 @@
+<app-header></app-header>
+
+<div class=" main-content">
+    <div class="login_form ">
+        <div class="row mt-3">
+            <h2>Ingrese sus datos!</h2>
+        </div>
+
+        <div class="row">
+            <form control="" class="form_" [formGroup]="formNewUser" (ngSubmit)="addNewUser()">
+                <div class="row">
+                    <input type="text" formControlName="firstName" id="firstName" class="form__input" placeholder="Nombre">
+
+                    <div *ngIf="formNewUser.get('firstName')?.invalid && (formNewUser.get('firstName')?.dirty || formNewUser.get('firstName')?.touched)" class="row errorColor">
+                        <div *ngIf="formNewUser.get('firstName')?.errors?.['required']">
+                            Campo Obligatorio
+                        </div>
+                        <div *ngIf="formNewUser.get('firstName')?.errors?.['pattern'] || formNewUser.get('firstName')?.errors?.['minlength']">
+                            Nombre Invalido 
+                        </div>
+                    </div>
+
+                </div>
+               
+
+                <div class="row">
+                    <input type="text" formControlName="lastName" id="lastName" class="form__input" placeholder="Apellido">
+                    <div *ngIf="formNewUser.get('lastName')?.invalid && (formNewUser.get('lastName')?.dirty || formNewUser.get('lastName')?.touched)" class="row errorColor">
+                        <div *ngIf="formNewUser.get('lastName')?.errors?.['required']">
+                            Campo Obligatorio
+                        </div>
+                        <div *ngIf="formNewUser.get('lastName')?.errors?.['pattern'] || formNewUser.get('lastName')?.errors?.['minlength']">
+                            Apellido Invalido 
+                        </div>
+                    </div>
+                </div>
+        
+
+                <div class="row">
+                    <input type="text" formControlName="email" id="email" class="form__input" placeholder="Correo">
+        
+                    <div *ngIf="formNewUser.get('email')?.invalid && (formNewUser.get('email')?.dirty || formNewUser.get('email')?.touched)" class="row errorColor">
+                        <div *ngIf="formNewUser.get('email')?.errors?.['required']">
+                            Campo Obligatorio
+                        </div>
+                        <div *ngIf="formNewUser.get('email')?.errors?.['pattern']">
+                            Correo Invalido 
+                        </div>
+                        <div *ngIf="formNewUser.get('email')?.hasError('emailExists')">
+                            Correo Ya Registrado
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="dropdown">
+                        <button  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          {{opcionRol}}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li class="dropdown-item"(click)="opcionCreator()">Creador</li>
+                          <li class="dropdown-item" (click)="opcionDonor()">Donador</li>
+                        </ul>
+                      </div>
+                </div>
+
+                <div class="row" *ngIf="opcionRol == 'Creador'">
+                    <input type="text" formControlName="place" id="place" class="form__input" placeholder="Pais - Provincia">
+                    <div class="row errorColor" *ngIf="formNewUser.get('place')?.invalid && (formNewUser.get('place')?.dirty || formNewUser.get('place')?.touched)">
+                        Campo Obligatorio
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <input type="password" formControlName="password" id="password" class="form__input" placeholder="Contraseña">
+
+                    <div *ngIf="formNewUser.get('password')?.invalid && (formNewUser.get('password')?.dirty || formNewUser.get('password')?.touched)" class="row errorColor">
+                        <div *ngIf="formNewUser.get('password')?.errors?.['required']">
+                            Campo Obligatorio
+                        </div>
+                        <div *ngIf="formNewUser.get('password')?.errors?.['pattern'] || formNewUser.get('password')?.errors?.['minlength']">
+                            Minimo 8 caracteres, 1 mayuscula, 1 miniscula, 1 numero y 1 caracter especial.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <input type="password" formControlName="repeatPassword" id="repeatPassword" class="form__input"
+                        placeholder="Confirmar contraseña">
+
+                        <div class="row errorColor" *ngIf="formNewUser.get('repeatPassword')?.invalid && (formNewUser.get('repeatPassword')?.dirty || formNewUser.get('repeatPassword')?.touched)">
+                            Campo Obligatorio
+                        </div>
+                        <div class="row errorColor" *ngIf="formNewUser.hasError('mismatch') && (formNewUser.get('repeatPassword')?.dirty || formNewUser.get('repeatPassword')?.touched)">
+                            No coinciden las contraseñas
+                        </div>
+                </div>
+                <div class="row-btn mb-5">
+                    <input type="submit" value="Registrarse" class="btn">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+

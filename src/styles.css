@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+    /* background-image: url(https://www.barakaldotiendaveterinaria.es/blog/wp-content/uploads/2021/11/tipos-de-mascotas-tener-en-casa.jpg);
+     */height: 78vh;
+    background-size: cover;
+}
+
+.principal_color{
+    background-color: #C5F87F;
+}
+
+.secundary_color{
+    background-color: #2F3334;
+    color: white;
+}

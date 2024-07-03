@@ -1,0 +1,43 @@
+<app-navbar-user></app-navbar-user>
+
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-3 mt-5">
+        <div *ngFor="let post of listPost" class="col mb-4">
+          <div class="card">
+            <img [src]="post.image" class="card-img-top img" alt="...">
+            <div class="card-body text-center">
+                <a (click)="detail(post.id)" class="btn principal_color" target="_blank"> 
+                  <img src="../../../assets/resources/icon3.png" alt="imagen" width="25px">
+                    &nbsp; Donar
+                </a>
+            </div>
+            <div class="card-footer text-muted text-center">
+                <div class="row">
+                    <p> {{post.data}} </p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div *ngIf="listPost.length > 0" class="d-flex justify-content-center">
+            1
+      </div>
+    
+      <div *ngIf="listPost.length > 0" class="d-flex justify-content-center mt-2">
+            <ul class="pagination">
+              <li class="page-item ">
+                <a class="page-link" class="btn secundary_color">&laquo; Anterior</a>
+              </li>
+            </ul>
+            &nbsp;&nbsp;
+            <ul class="pagination ml-4">
+                <li  class="page-item">
+                    <a class="page-link" class="btn secundary_color">Siguiente &raquo;</a>
+                </li>
+            </ul>
+      </div>
+
+</div>
+
+<app-footer></app-footer>

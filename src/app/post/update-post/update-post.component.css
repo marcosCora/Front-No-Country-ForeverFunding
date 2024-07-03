@@ -1,0 +1,93 @@
+/* Ajustes para mantener el tamaño de la imagen en la tarjeta */
+form .card2 .image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form .card2 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.container.mb-5 form {
+  margin-bottom: 150px; /* Puedes ajustar este valor según sea necesario */
+}
+
+#ver-posts-btn {
+  margin-left: 10px;
+}
+
+form .card2 img {
+  width: 100%;
+  height: auto;
+}
+
+form .card1 {
+  height: 400px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+form .card2 {
+  height: 400px;
+  width: 100%;
+  border: none;
+  background-color: #000;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+form .login {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+form .input-field span {
+  font-size: 12px;
+  color: #cecdcd;
+  margin-left: 10px;
+}
+
+form .form-control {
+  font-size: 13px;
+  color: #767473;
+  font-weight: 500;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid #9b9b9b;
+  box-shadow: none;
+}
+
+form .btn {
+  height: 35px;
+  width: 100%;
+  background-color: #000;
+  font-weight: 500;
+  color: #cdcdc4;
+  border: none;
+  font-size: 15px;
+}
+
+form .text1 .forget {
+  color: #364b28;
+  font-weight: 500;
+}
+
+form .text2 span {
+  font-weight: 500;
+  color: #7a7778;
+}
+
+form .text2 .register {
+  color: #4f4942;
+  font-weight: bold;
+}

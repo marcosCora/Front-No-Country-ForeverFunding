@@ -1,0 +1,40 @@
+<app-navbar-user></app-navbar-user>
+
+<section class="light">
+    <div class="container py-2">
+        <div class="h1 text-center text-dark" id="pageHeaderTitle">Mis Publicaciones</div>
+  
+        <div *ngFor="let post of getCurrentPagePosts()" class="postcard light">
+            <a class="postcard__img_link">
+                <img class="postcard__img" [src]="post.image"/>
+            </a>
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title blue">{{post.name}}</h1>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">{{post.data}}</div>
+                <div class="postcard__tagbox">
+                    <button class="btn-custom btn-sm" matTooltip="Eliminar" (click)="deletePost(post)"><i class="fas fa-trash-alt btn-eliminar"></i> &nbsp; Eliminar</button>
+                    <button class="btn-custom btn-sm" matTooltip="Editar" (click)="update(post.id)"><i class="far fa-edit btn-editar"></i> &nbsp; Editar</button>
+                </div>
+            </div>
+        </div>
+  
+        <div *ngIf="totalPages > 1" class="d-flex justify-content-between mt-2">
+            <div class="d-flex">
+                <button class="btn-custom btn-sm btn-regresar" (click)="goBack()"><i class="fas fa-arrow-left"></i> Regresar</button>
+                <ul class="pagination">
+                    <li class="page-item" *ngIf="currentPage !== 0">
+                        <a class="page-link btn btn-sm list-post-btn" matTooltip="Anterior" (click)="previousPage()">&laquo; Anterior</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="pagination">
+                <li class="page-item" *ngIf="currentPage < totalPages - 1">
+                    <a class="page-link btn btn-sm list-post-btn" matTooltip="Siguiente"  (click)="nextPage()">Siguiente &raquo;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

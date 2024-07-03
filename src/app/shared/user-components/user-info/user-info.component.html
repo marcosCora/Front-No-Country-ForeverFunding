@@ -1,0 +1,81 @@
+<app-navbar-user></app-navbar-user>
+  
+<div class="card">
+    <div class="card-text">
+      <div class="portada">
+      <img class="imgProfile" src="" alt="">
+      </div>
+      
+    <div class="title-total">
+        
+    <div class="desc">
+      <h4>{{ user.name}} {{ user.lastname }}</h4><br>
+      <b>Email:</b> {{user.email}} <br>
+      <b>Rol:</b> ({{user.role}}) <br>
+       <b>Lugar:</b> {{ user.place }} <br>
+       <b>Redes sociales:</b> {{ user.rrs_ig }} <br>
+    </div>
+
+    <div *ngIf="isEditing" class="form-edit">
+      <!-- Formulario de edición -->
+      <div *ngIf="isEditing" class="form-edit">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" formControlName="name">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Apellido</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" formControlName="lastname">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" formControlName="email">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Lugar</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" formControlName="place">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Redes</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" formControlName="rrs_ig">
+          </div>
+          
+          <button mat-button type="submit"  aria-label="check"><i class="fa-solid fa-check"></i></button>
+          <button mat-button type="button" class="cancel-button" (click)="disableEditing()" aria-label="cancel"><i class="fa-solid fa-xmark"></i></button>
+        </form>
+        <div *ngIf="isLoading" class="loader">
+          <mat-spinner></mat-spinner>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+        <div class="actions">
+          <button (click)="back()" aria-label="volver atras"><i class="fa-solid fa-arrow-left"></i></button>
+          <button mat-icon-button (click)="enableEditing()" aria-label="editar formulario">
+            <i class="fa-regular fa-pen-to-square"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+  <app-footer></app-footer>

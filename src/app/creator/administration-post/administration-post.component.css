@@ -1,0 +1,26 @@
+.container_{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.table_{
+    overflow-x: auto;
+    width: 100%;
+}
+
+img{
+    width: 35px;
+}
+
+.paginator-control{
+    margin-top: 10px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.custom-table-header {
+    color: #ffffff; /* Cambia el color de texto según tus preferencias */
+    font-weight: bold; /* Otras propiedades de estilo según tus preferencias */
+}

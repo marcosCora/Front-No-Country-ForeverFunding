@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <ul class="navbar-nav me-auto mb-lg-0">
+        <li class="nav-item active">
+          <a class="back" (click)="back()">
+            <img src="../../../assets/resources/slogan.png" height="80px" >
+          </a>
+        </li>
+      </ul>
+
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-menu"> 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="profile-pic" style="width: 40px;">
+                  <img src={{photoUser}} alt="Profile Picture">
+               </div>
+           <!-- You can also use icon as follows: -->
+             <!--  <i class="fas fa-user"></i> -->
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" (click)="redirectToUserInfo()"><i class="fa-solid fa-user fa-fw"></i> Perfil </a></li>
+              <li><a class="dropdown-item" (click)="panel()"><i class="fas fa-sliders-h fa-fw"></i> Panel </a></li>
+              <li><a class="dropdown-item" (click)="redirectToAdministration()"><i class="fas fa-cog fa-fw"></i> {{opcion}} </a></li>
+              <!--<li *ngIf="role == 'admin' "><a class="dropdown-item"><i class="fas fa-cog fa-fw"></i> Opciones de adminstrador </a></li>-->
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" (click)="logOut()"><i class="fas fa-sign-out-alt fa-fw"></i> Salir </a></li>
+            </ul>
+          </li>
+       </ul>
+      </div>
+  </nav>

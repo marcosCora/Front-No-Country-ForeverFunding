@@ -1,0 +1,119 @@
+
+.main-content{
+	width: 50%;
+	margin: 5em auto;
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Usar la altura completa del viewport */
+}
+
+.fa-android{
+	font-size:3em;
+}
+ @media only screen and (max-width: 640px) {
+	 .main-content{
+		width: 90%;
+	}
+	.form_ {
+		grid-template-columns: 1fr; /* Cambia a una sola columna */
+	  }
+	
+	  .form_.row-btn {
+		grid-column: span 1; /* Asegúrate de que el botón también ocupe una sola columna */
+	  }
+
+} 
+ @media screen and (min-width: 642px) and (max-width:800px){
+	.main-content{width: 70%;}
+
+} 
+.row > h2{
+	color:#A5CB78;
+}
+
+.row{
+    justify-content: center;
+}
+
+.row div{
+	margin: 2%;
+}
+
+.login_form{
+    background-color: #fff; 
+	border-top:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-radius: 20px;
+	box-shadow: 0 5px 5px rgba(0,0,0,.4);
+	width: 100%;
+}
+.form_{
+	padding: 0 3em;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+}
+.form__input{
+	width: 100%;
+	border:0px solid transparent;
+	border-radius: 0;
+	border-bottom: 1px solid #aaa;
+	padding: 1em .5em .5em;
+	padding-left: 2em;
+	outline:none;
+	margin:1.5em auto;
+	transition: all .5s ease;
+}
+.form__input,
+.btn {
+    width: 100%; /* Hace que los inputs y botones ocupen todo el ancho disponible */
+    max-width: 90%; /* Establece un ancho máximo para evitar que los elementos se hagan demasiado grandes */
+    margin: 0.5em auto; /* Margen superior e inferior para separar los elementos */
+}
+
+.form__input:focus{
+	border-bottom-color: #C5F87F;
+	box-shadow: 0 0 5px #bffd744e; 
+	border-radius: 4px;
+}
+
+.row-btn{
+	grid-column: span 2;
+	grid-row: auto;
+	width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+    text-align: center; /* Centra el botón horizontalmente */
+}
+
+.btn{
+	transition: all .5s ease;
+	width: 70%;
+	border-radius: 30px;
+	color:#2F3334;
+	font-weight: 600;
+	background-color: #fff;
+	border: 1px solid #2F3334;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
+.btn:hover, .btn:focus{
+	background-color: #2F3334;
+	color:#fff;
+}
+
+.errorColor{
+	color: red;
+}
+
+
+
+
